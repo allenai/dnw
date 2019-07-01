@@ -1,0 +1,41 @@
+# =========================== Basic Settings ===========================
+
+model: models.graphs.mobilenetv1like:MobileNetV1Like
+
+# data
+data: data.imagenet:ImageNet
+batch_size: 512
+test_batch_size: 512
+workers: 32
+
+# lr
+lr: 0.1
+lr_scheduler: cosine
+
+# optimizer
+optimizer: sgd
+momentum: 0.9
+weight_decay: 0.00005
+nestorov: False
+
+# info
+output_size: 1000
+image_size: 224
+num_epochs: 250
+in_channels: 3
+topk: [1,5]
+
+# other
+resume: ''
+seed: 1996
+save_dir: './imagenet_checkpoints'
+log_dir: './imagenet_runs'
+evaluate: False
+
+
+# =========================== Override ===========================
+prune_rate: 0.85
+skip_profiling: False
+graph: dnw
+setting: static
+small: True

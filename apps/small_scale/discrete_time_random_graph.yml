@@ -1,0 +1,50 @@
+# =========================== Basic Settings ===========================
+
+model: models.graphs.neuralgraph:DiscreteTimeNeuralGraph
+
+# data
+data: data.cifar10:CIFAR10
+batch_size: 512
+test_batch_size: 512
+workers: 8
+
+# lr
+lr: 0.1
+lr_scheduler: multistep
+multistep_lr_milestones: [80, 120]
+multistep_lr_gamma: 0.1
+
+# optimizer
+optimizer: sgd
+momentum: 0.9
+weight_decay: 0.0001
+nestorov: False
+
+# info
+output_size: 10
+image_size: 32
+num_epochs: 160
+in_channels: 3
+topk: [1,5]
+
+# other
+resume: ''
+seed: 1996
+save_dir: './checkpoints'
+log_dir: './runs'
+evaluate: False
+
+
+# =========================== Override ===========================
+val_resize: 32
+prune_rate: 0.95
+prune: True
+
+dim: 800
+downsample_dim: 32
+feature_dim: 100
+layers: 5
+
+graph: random
+setting: discrete_time
+skip_profiling: True

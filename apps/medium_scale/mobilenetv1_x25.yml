@@ -1,0 +1,40 @@
+# =========================== Basic Settings ===========================
+
+model: models.basic.mobilenetv1cifar:MobileNetV1CIFAR
+
+# data
+data: data.cifar10:CIFAR10
+batch_size: 128
+test_batch_size: 128
+workers: 8
+
+# lr
+lr: 0.1
+lr_scheduler: cosine
+
+# optimizer
+optimizer: sgd
+momentum: 0.9
+weight_decay: 0.0001
+nestorov: False
+
+# info
+output_size: 10
+image_size: 32
+num_epochs: 160
+in_channels: 3
+topk: [1,5]
+
+# other
+resume: ''
+seed: 1996
+save_dir: './checkpoints'
+log_dir: './runs'
+evaluate: False
+
+
+# =========================== Override ===========================
+val_resize: 32
+width_mult: 0.25
+
+skip_profiling: True
