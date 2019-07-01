@@ -71,7 +71,7 @@ python runner.py app:apps/large_scale/<experiment-file> --gpus 0 1 2 3 --data-di
 ```
 and to evaluate a pretrained model which matches the experiment file use.
 ```bash
-python runner.py app:apps/large_scale/<experiment-file> --gpus 0 --data-dir <data-dir> --resume <path-to-pretrained-model> --evaluate
+python runner.py app:apps/large_scale/<experiment-file> --gpus 0 1 --data-dir <data-dir> --resume <path-to-pretrained-model> --evaluate
 ```
 
 
@@ -95,9 +95,13 @@ As a result, the first conv, last linear layer, and all operations throughout ha
 [https://www.dgl.ai/](https://www.dgl.ai/). You must then install the version of `dgl` which matches your CUDA and Python version
 (see [this](https://www.dgl.ai/pages/start.html) for more details). For example, we run 
 ```bash
+pip uninstall dgl
 pip install https://s3.us-east-2.amazonaws.com/dgl.ai/wheels/cuda9.2/dgl-0.3-cp36-cp36m-manylinux1_x86_64.whl
 ```
-
+and finally
+```bash
+python runner.py app:apps/large_scale/<experiment-file> --gpus 0 --data-dir <data-dir> --resume <path-to-pretrained-model> --evaluate --fast_eval --use_dgl --batch_size 256
+```
 
 ## Other Methods of Discovering Neural Wirings
 
