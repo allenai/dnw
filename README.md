@@ -3,15 +3,15 @@
 By Mitchell Wortsman, Ali Farhadi and Mohammad Rastegari.
 
 
-[Preprint](https://arxiv.org/abs/1906.00586) | [Blog](#blog) | [BibTex](#citing)
+[Preprint](https://arxiv.org/abs/1906.00586) | [Blog](https://mitchellnw.github.io/blog/2019/dnw/) | [BibTex](#citing)
 
 ![](fig/fig.jpg)
 
-In this work we propose a method for discovering neural wirings. 
-We relax the typical notion of layers and instead enable channels 
+In this work we propose a method for discovering neural wirings.
+We relax the typical notion of layers and instead enable channels
 to form connections independent of each other.
-This allows for a much larger space of possible networks. 
-The wiring of our network is not fixed during training -- 
+This allows for a much larger space of possible networks.
+The wiring of our network is not fixed during training --
 as we learn the network parameters we also learn the structure itself.
 
 ## Citing
@@ -33,7 +33,7 @@ If you find this project useful in your research, please consider citing:
 0. Clone this repository.
 1. Using `python 3.6`, create a `venv` with  `python -m venv venv` and run `source venv/bin/activate`.
 2. Install requirements with `pip install -r requirements.txt`.
-3. Create a **data directory** `<data-dir>`. 
+3. Create a **data directory** `<data-dir>`.
 If you wish to run ImageNet experiments there must be a folder `<data-dir>/imagenet`
 that contains the ImageNet `train` and `val`. By running experiments on CIFAR-10 a
 folder `<data-dir>/cifar10` will automatically be created with the dataset.
@@ -76,12 +76,12 @@ python runner.py app:apps/large_scale/<experiment-file> --gpus 0 1 --data-dir <d
 
 
 | Model  | Params | FLOPs | Accuracy (ImageNet) |
-| :-------------: | :-------------: | :-------------: | :-------------: | 
+| :-------------: | :-------------: | :-------------: | :-------------: |
 | [MobileNet V1 (x 0.25)](https://arxiv.org/abs/1704.04861)  |  0.5M  | 41M  | 50.6  |
 | [ShuffleNet V2 (x 0.5)](https://arxiv.org/abs/1807.11164)  |  1.4M | 41M  | 60.3 |
 | [MobileNet V1 (x 0.5)](https://arxiv.org/abs/1704.04861)  |  1.3M | 149M  | 63.7 |
 | [ShuffleNet V2 (x 1)](https://arxiv.org/abs/1807.11164)  |  2.3M | 146M  | 69.4 |
-| [MobileNet V1 Random Graph (x 0.225)](https://prior-datasets.s3.us-east-2.amazonaws.com/dnw/pretrained-models/rg_x225.pt)  |  1.2M | 55.7M  | 53.3 | 
+| [MobileNet V1 Random Graph (x 0.225)](https://prior-datasets.s3.us-east-2.amazonaws.com/dnw/pretrained-models/rg_x225.pt)  |  1.2M | 55.7M  | 53.3 |
 | [MobileNet V1 DNW Small (x 0.15)](https://prior-datasets.s3.us-east-2.amazonaws.com/dnw/pretrained-models/dnw_small_x15.pt)  |  0.24M | 22.1M  | 50.3 |
 | [MobileNet V1 DNW Small (x 0.225)](https://prior-datasets.s3.us-east-2.amazonaws.com/dnw/pretrained-models/dnw_small_x225.pt)  |  0.4M | 41.2M  | 59.9 |
 | [MobileNet V1 DNW (x 0.225)](https://prior-datasets.s3.us-east-2.amazonaws.com/dnw/pretrained-models/dnw_x225.pt)  |  1.1M | 42.1M | 60.9 |
@@ -91,9 +91,9 @@ python runner.py app:apps/large_scale/<experiment-file> --gpus 0 1 --data-dir <d
 
 You may also add the flag `--fast_eval` to make the model smaller and speed up inference. Adding `--fast_eval` removes the neurons which _die_.
 As a result, the first conv, last linear layer, and all operations throughout have much fewer input and output channels. You may add both
-`--fast_eval` and `--use_dgl` to obtain a model for evaluation that matches the theoretical FLOPs by using a graph implementation via 
+`--fast_eval` and `--use_dgl` to obtain a model for evaluation that matches the theoretical FLOPs by using a graph implementation via
 [https://www.dgl.ai/](https://www.dgl.ai/). You must then install the version of `dgl` which matches your CUDA and Python version
-(see [this](https://www.dgl.ai/pages/start.html) for more details). For example, we run 
+(see [this](https://www.dgl.ai/pages/start.html) for more details). For example, we run
 ```bash
 pip uninstall dgl
 pip install https://s3.us-east-2.amazonaws.com/dgl.ai/wheels/cuda9.2/dgl-0.3-cp36-cp36m-manylinux1_x86_64.whl
@@ -113,7 +113,3 @@ python runner.py app:apps/medium_scale/<experiment-file> --gpus 0 --data-dir <da
 ```
 
 To replicate the one-shot pruning or fine tuning experiments, you must first use `mobilenetv1_complete_graph.yml` to obtain the initialization `init.pt` and the final epoch.  
-
-## Blog
-
-Coming soon!
