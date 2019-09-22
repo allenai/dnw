@@ -5,7 +5,7 @@ By Mitchell Wortsman, Ali Farhadi and Mohammad Rastegari.
 
 [Preprint](https://arxiv.org/abs/1906.00586) | [Blog](https://mitchellnw.github.io/blog/2019/dnw/) | [BibTex](#citing)
 
-![](fig/fig.jpg)
+![](fig/dnw.gif)
 
 In this work we propose a method for discovering neural wirings.
 We relax the typical notion of layers and instead enable channels
@@ -13,6 +13,8 @@ to form connections independent of each other.
 This allows for a much larger space of possible networks.
 The wiring of our network is not fixed during training --
 as we learn the network parameters we also learn the structure itself.
+
+The folder `imagenet_sparsity_experiments` contains the code for training sparse neural networks. 
 
 ## Citing
 
