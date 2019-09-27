@@ -11,6 +11,8 @@ nvidia-docker run -it --rm --privileged --ipc=host \
     -v `pwd`:/workspace/rn50 \
     -v <path to imagenet on your computer>:/data/imagenet \
     nvcr.io/nvidia/pytorch:19.06-py3
+
+cd rn50
 ```
 
 2. Run the experiment.
@@ -26,7 +28,3 @@ Where config must be either
 `experiment-title` is the folder (which will be created) for the resulting model to be saved.
 
 As discussed in the [blog](https://mitchellnw.github.io/blog/2019/dnw/) and [paper](https://arxiv.org/abs/1906.00586), batch norm and bias are left dense.
-
-
-
-
