@@ -127,5 +127,5 @@ dmypy.json
 # Added
 runs
 checkpoints
-.idea/vcs.xml
+.idea/*
 apps/gen
