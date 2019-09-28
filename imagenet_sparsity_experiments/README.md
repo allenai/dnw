@@ -15,7 +15,7 @@ nvidia-docker run -it --rm --privileged --ipc=host \
 cd rn50
 ```
 
-2. Run the experiment.
+2. Train your model.
 ```bash
 bash exp/starter.sh <config> <experiment-title>
 ```
@@ -28,3 +28,26 @@ Where config must be either
 `experiment-title` is the folder (which will be created) for the resulting model to be saved.
 
 As discussed in the [blog](https://mitchellnw.github.io/blog/2019/dnw/) and [paper](https://arxiv.org/abs/1906.00586), batch norm and bias are left dense.
+
+3. Evaluate your model.
+
+```bash
+bash exp/test.sh <config> <path-to-checkpoint>
+```
+
+Donwload all models [here](https://drive.google.com/drive/folders/1TrwDTtwW_V7pyeHo1n7aRMrq8Yth9t6I?usp=sharing).
+
+Results should be as follows:
+
+| Sparsity | All Layers Sparse | First Layer Dense |
+| :-------------: | :-------------: | :-------------: | 
+| Dense | 77.510 % | 77.510 % |
+| 10 % | 77.488 % | 77.382 % |
+| 20 % | 77.610 % | 77.284 % |
+| 30 % | 77.604 % | 77.492 % |
+| 40 % | 77.536 % | 77.564 % |
+| 50 % | 77.528 % | 77.570 % |
+| 60 % | 77.290 % | 77.456 % |
+| 70 % | 76.904 % | 77.076 % |
+| 80 % | 76.158 % | 76.600 % |
+| 90 % | 74.026 % | 75.044 % |

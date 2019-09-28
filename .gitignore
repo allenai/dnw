@@ -128,4 +128,5 @@ dmypy.json
 runs
 checkpoints
 .idea/*
+.idea
 apps/gen
