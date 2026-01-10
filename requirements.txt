@@ -21,7 +21,7 @@ tensorboardX==1.6
 tensorflow==1.13.1
 tensorflow-estimator==1.13.0
 termcolor==1.1.0
-torch==1.0.1
+torch==2.8.0
 -e git+https://github.com/rtqichen/torchdiffeq.git@8c6078974786bb4ca879fc35ac74edc27aa82a19#egg=torchdiffeq
 torchvision==0.2.2
 tqdm==4.19.9
