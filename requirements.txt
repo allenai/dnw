@@ -25,4 +25,4 @@ torch==1.0.1
 -e git+https://github.com/rtqichen/torchdiffeq.git@8c6078974786bb4ca879fc35ac74edc27aa82a19#egg=torchdiffeq
 torchvision==0.2.2
 tqdm==4.19.9
-Werkzeug==0.15.4
+Werkzeug==3.1.6
